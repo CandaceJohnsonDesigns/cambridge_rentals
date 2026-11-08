@@ -2,8 +2,8 @@ import "./Title.css";
 
 const Title = () => {
     return (
-        <div>
-            
+        <div className="titleSection">
+            <h1>Properties for Rent</h1>
         </div>
     );
 };
