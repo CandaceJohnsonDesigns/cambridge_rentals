@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies & Build Outputs
+node_modules
+dist
+dist-ssr
+*.local
+
+# Ignores the hidden sync directory created by VS Code Dev Containers
+.devcontainer/.remote
+# Prevent accidental committing of docker-compose override files if created later
+docker-compose.override.yml
+
+# Block all environment files containing sensitive API keys/secrets
+.env
+.env.local
+.env.*.local
+# But allow a blank template file so teammates know what keys are required:
+!.env.example
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+

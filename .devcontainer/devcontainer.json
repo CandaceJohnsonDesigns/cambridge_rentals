@@ -1,0 +1,44 @@
+{
+  "name": "Cambridge Rentals - React 19 Sandbox",
+  "image": "://microsoft.com",
+  
+  // Isolate node_modules inside Docker
+  "mounts": [
+    "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
+
+  // Expose the default Vite development server port (5173)
+  "forwardPorts": [5173],
+
+  // Configure VS Code extensions inside the sandbox automatically
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[javascriptreact]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescriptreact]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+
+  // Automatically run npm install when the container finishes building
+  "postCreateCommand": "npm install",
+
+  // Run as a secure, non-root user
+  "remoteUser": "node"
+}
