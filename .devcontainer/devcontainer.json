@@ -1,11 +1,14 @@
 {
   "name": "Cambridge Rentals - React 19 Sandbox",
-  "image": "://microsoft.com",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
+  
   
   // Isolate node_modules inside Docker
   "mounts": [
-    "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+    "source=cambridge-rentals-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
   ],
+
+  "updateRemoteUserUID": true,
 
   // Expose the default Vite development server port (5173)
   "forwardPorts": [5173],
