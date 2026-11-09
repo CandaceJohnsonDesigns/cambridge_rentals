@@ -4,6 +4,10 @@ import PropertyTypeLabel from "./PropertyImage/PropertyTypeLabel/PropertyTypeLab
 import PropertyBanner from "./PropertyImage/PropertyBanner/PropertyBanner";
 import IconWithText from "./PropertyImage/IconWithText/IconWithText";
 import { Bath, Bed, Maximize } from "lucide-react";
+import PropertyAttribute from "./PropertyAttribute/PropertyAttribute";
+import { usePriceFormatter } from "../../../hooks/usePriceFormatter";
+
+
 
 const Property = ({
   image,
@@ -16,6 +20,9 @@ const Property = ({
   date,
   type,
 }) => {
+  
+  const { formatToString: formatPrice } = usePriceFormatter();
+
   return (
     <div
       className="property-card"
@@ -33,7 +40,10 @@ const Property = ({
             <IconWithText Icon={Maximize} text={surface} />
         </div>
       </PropertyImage>
-      <div>Property Attributes</div>
+
+      <PropertyAttribute text={address} />
+      <PropertyAttribute text={`${formatPrice(rent)} / month`} />
+      <PropertyAttribute text={`Available from ${date}`} />
     </div>
   );
 };

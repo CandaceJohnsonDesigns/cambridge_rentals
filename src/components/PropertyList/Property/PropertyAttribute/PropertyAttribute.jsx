@@ -1,9 +1,9 @@
 import "./PropertyAttribute.css";
 
-const PropertyAttribute = () => {
+const PropertyAttribute = ({ text }) => {
     return (
         <p>
-            
+            {text}
         </p>
     );
 };
