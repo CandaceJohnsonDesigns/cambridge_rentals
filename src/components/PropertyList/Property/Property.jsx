@@ -2,6 +2,8 @@ import "./Property.css";
 import PropertyImage from "./PropertyImage/PropertyImage";
 import PropertyTypeLabel from "./PropertyImage/PropertyTypeLabel/PropertyTypeLabel";
 import PropertyBanner from "./PropertyImage/PropertyBanner/PropertyBanner";
+import IconWithText from "./PropertyImage/IconWithText/IconWithText";
+import { Bath, Bed, Maximize } from "lucide-react";
 
 const Property = ({
   image,
@@ -25,6 +27,11 @@ const Property = ({
       <PropertyImage image={image}>
         <PropertyTypeLabel type={type} />
         {!available && <PropertyBanner />}
+        <div className="property-info">
+            <IconWithText Icon={Bed} text={bedrooms} />
+            <IconWithText Icon={Bath} text={bathrooms} />
+            <IconWithText Icon={Maximize} text={surface} />
+        </div>
       </PropertyImage>
       <div>Property Attributes</div>
     </div>
