@@ -1,6 +1,7 @@
 import "./Property.css";
 import PropertyImage from "./PropertyImage/PropertyImage";
 import PropertyTypeLabel from "./PropertyImage/PropertyTypeLabel/PropertyTypeLabel";
+import PropertyBanner from "./PropertyImage/PropertyBanner/PropertyBanner";
 
 const Property = ({
   image,
@@ -22,8 +23,8 @@ const Property = ({
       }}
     >
       <PropertyImage image={image}>
-        Property at {address}.
         <PropertyTypeLabel type={type} />
+        {!available && <PropertyBanner />}
       </PropertyImage>
       <div>Property Attributes</div>
     </div>

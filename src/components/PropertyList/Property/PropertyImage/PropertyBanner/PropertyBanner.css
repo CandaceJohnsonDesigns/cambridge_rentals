@@ -1,0 +1,13 @@
+.property-banner {
+    background-color: var(--banner-bg);
+    color: var(--fixed-text);
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.3125rem 1.75rem;
+    box-shadow: var(--shadow);
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 1.3rem;
+    left: -2.1rem;
+}
