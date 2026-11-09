@@ -1,9 +1,13 @@
-html {
-  font-size: 1em;
-}
-
 body {
   background-color: var(--accent-bg);
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 10rem;
+    }
 }
 
 .inline-icon {

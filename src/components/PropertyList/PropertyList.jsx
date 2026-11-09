@@ -1,9 +1,15 @@
 import "./PropertyList.css";
+import Property from "./Property/Property";
 
-const PropertyList = () => {
+const PropertyList = ({properties}) => {
     return (
-        <div>
-            
+        <div className="property-list">
+            {properties.map((property) => (
+                <Property 
+                key={property.id}
+                {...property}
+                />
+            ))}
         </div>
     );
 };
