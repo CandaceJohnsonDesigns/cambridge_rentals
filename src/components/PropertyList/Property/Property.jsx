@@ -7,8 +7,6 @@ import { Bath, Bed, Maximize } from "lucide-react";
 import PropertyAttribute from "./PropertyAttribute/PropertyAttribute";
 import { usePriceFormatter } from "../../../hooks/usePriceFormatter";
 
-
-
 const Property = ({
   image,
   bedrooms,
@@ -20,7 +18,6 @@ const Property = ({
   date,
   type,
 }) => {
-  
   const { formatToString: formatPrice } = usePriceFormatter();
 
   return (
@@ -35,15 +32,21 @@ const Property = ({
         <PropertyTypeLabel type={type} />
         {!available && <PropertyBanner />}
         <div className="property-info">
-            <IconWithText Icon={Bed} text={bedrooms} />
-            <IconWithText Icon={Bath} text={bathrooms} />
-            <IconWithText Icon={Maximize} text={surface} />
+          <IconWithText Icon={Bed} text={bedrooms} />
+          <IconWithText Icon={Bath} text={bathrooms} />
+          <IconWithText Icon={Maximize} text={surface} />
         </div>
       </PropertyImage>
 
-      <PropertyAttribute text={address} />
-      <PropertyAttribute text={`${formatPrice(rent)} / month`} />
-      <PropertyAttribute text={`Available from ${date}`} />
+      <div className="property-attributes">
+        <PropertyAttribute text={address} />
+        <PropertyAttribute
+          text={`${formatPrice(rent)} / month`}
+          color="#2CDEB6"
+          bold
+        />
+        <PropertyAttribute text={`Available from ${date}`} />
+      </div>
     </div>
   );
 };

@@ -22,3 +22,10 @@
     border-radius: 0.25rem;
 }
 
+.property-attributes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.625rem;
+}
+
